@@ -33,7 +33,7 @@ var featureImages = theme.featureImages;
                                     var num = Math.abs(hashCode(page.prev.title) % len);
                                     featureimg = featureImages[num];
                                 %>
-                                <img src="<%= featureimg %>" class="responsive-img" alt="<%- page.prev.title %>">
+                                <img src="<%- theme.jsDelivr.url %><%= featureimg %>" class="responsive-img" alt="<%- page.prev.title %>">
                             <% } %>
                             <span class="card-title"><%- page.prev.title %></span>
                         </div>
@@ -95,7 +95,7 @@ var featureImages = theme.featureImages;
                                     var num = Math.abs(hashCode(page.title) % len);
                                     featureimg = featureImages[num];
                                 %>
-                                <img src="<%= featureimg %>" class="responsive-img" alt="<%- page.title %>">
+                                <img src="<%- theme.jsDelivr.url %><%= featureimg %>" class="responsive-img" alt="<%- page.title %>">
                             <% } %>
                             <span class="card-title"><%- page.title %></span>
                         </div>
@@ -159,7 +159,7 @@ var featureImages = theme.featureImages;
                                     var num = Math.abs(hashCode(page.next.title) % len);
                                     featureimg = featureImages[num];
                                 %>
-                                <img src="<%= featureimg %>" class="responsive-img" alt="<%- page.next.title %>">
+                                <img src="<%- theme.jsDelivr.url %><%= featureimg %>" class="responsive-img" alt="<%- page.next.title %>">
                             <% } %>
                             <span class="card-title"><%- page.next.title %></span>
                         </div>
@@ -221,7 +221,7 @@ var featureImages = theme.featureImages;
                                     var num = Math.abs(hashCode(page.title) % len);
                                     featureimg = featureImages[num];
                                 %>
-                                <img src="<%= featureimg %>" class="responsive-img" alt="<%- page.title %>">
+                                <img src="<%- theme.jsDelivr.url %><%= featureimg %>" class="responsive-img" alt="<%- page.title %>">
                             <% } %>
                             <span class="card-title"><%- page.title %></span>
                         </div>

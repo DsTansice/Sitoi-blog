@@ -70,12 +70,12 @@ var coverPostsCount = coverPosts.length;
                 </a>
 
                 <% if (theme.indexbtn && theme.indexbtn.enable) { %>
-                    <a href="<%- theme.indexbtn.url %>" class="waves-effect waves-light btn" target="_blank">
-                        <i class="fa <%- theme.indexbtn.icon %>"></i><%- theme.indexbtn.name %>
+                    <a href="<%- url_for(theme.indexbtn.url) %>" class="waves-effect waves-light btn" target="_blank">
+                        <i class="fa <%- theme.indexbtn.icon %>"></i><%= theme.indexbtn.name %>
                     </a>
                 <% } else if (theme.githubLink.enable) { %>
                     <a href="<%- theme.githubLink.url %>" class="waves-effect waves-light btn" target="_blank">
-                        <i class="fa fa-github %>"></i><%- theme.githubLink.title %>
+                        <i class="fa fa-github %>"></i><%= theme.githubLink.title %>
                     </a>
                 <% } %>
             </div>
@@ -109,11 +109,11 @@ var coverPostsCount = coverPosts.length;
                         : (post.img ? post.img : featureImages[Math.abs(hashCode(post.title) % imgCount)]);
             %>
             <div class="carousel-item amber white-text carousel-post bg-cover"
-                 style="background-image: url('<%- coverImg %>');">
+                 style="background-image: url('<%- theme.jsDelivr.url %><%- url_for(coverImg) %>');">
                 <div class="container">
                     <div class="row">
                         <div class="col s10 offset-s1">
-                            <div class="title center-align"><%- post.title %></div>
+                            <div class="title center-align"><%= post.title %></div>
                             <div class="description center-align">
                                 <% if (post.summary && post.summary.length > 0) { %>
                                     <%- post.summary %>
@@ -138,11 +138,32 @@ var coverPostsCount = coverPosts.length;
 <script>
     $(function () {
         let coverSlider = $('.carousel');
+
+        //用户触摸轮播自动 restartPlay 是否生效
+        let initUserPressedOrDraggedActive = false
+
+        //用户触摸轮播自动 restartPlay
+        function initUserPressedOrDragged(instance) {
+            setInterval(() => {
+                if (instance.pressed || instance.dragged) {
+                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
+                    restartPlay()
+                }
+            }, 1000)
+        }
+
         coverSlider.carousel({
             duration: Number('<%- theme.cover.duration %>'),
             fullWidth: true,
-            indicators: '<%- theme.cover.showIndicators %>' === 'true'
-        });
+            indicators: '<%- theme.cover.showIndicators %>' === 'true',
+            onCycleTo() {
+                if (!initUserPressedOrDraggedActive) {
+                    // console.log('initUserPressedOrDraggedActive')
+                    initUserPressedOrDragged(this)
+                    initUserPressedOrDraggedActive = true
+                }
+            },
+        })
 
         let carouselIntervalId;
         <% if (theme.cover.autoLoop) { %>
@@ -155,7 +176,7 @@ var coverPostsCount = coverPosts.length;
         autoCarousel();
         <% } %>
 
-        let restartPlay = function () {
+        function restartPlay() {
             <% if (theme.cover.autoLoop) { %>
             clearInterval(carouselIntervalId);
             autoCarousel();

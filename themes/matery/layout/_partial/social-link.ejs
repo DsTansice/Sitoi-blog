@@ -5,8 +5,8 @@
         <i class="fa fa-github"></i>
     </a>
 <% } %>
-<% if (theme.socialLink.wechat) { %>
-    <a href="/wechat.jpg"
+<% if (theme.socialLink.wechat.enable) { %>
+    <a href="<%= theme.socialLink.wechat.img %>"
        target="_blank" data-tooltip="添加我的微信: <%= theme.socialLink.wechat %>" data-position="top"
        data-delay="50">
         <i class="fa fa-weixin"></i>

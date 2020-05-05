@@ -81,16 +81,16 @@ if (faviconExt === 'png') {
     <meta name="theme-color" content="white"/>
     <meta name="referrer" content="no-referrer">
     <title><%= pageTitle %></title>
-    <link rel="icon" type="<%= iconType %>" href="<%- theme.favicon %>">
-    <link rel="apple-touch-icon" href="<%- theme.appletouchicon %>">
+    <link rel="apple-touch-icon" href="<%- theme.jsDelivr.url %><%- url_for(theme.appletouchicon) %>">
+    <link rel="icon" type="<%= iconType %>" href="<%- theme.jsDelivr.url %><%- url_for(theme.favicon) %>">
+    <link rel="stylesheet" type="text/css" href="<%- theme.jsDelivr.url %><%- url_for(theme.libs.css.fontAwesome) %>">
+    <link rel="stylesheet" type="text/css" href="<%- theme.jsDelivr.url %><%- url_for(theme.libs.css.materialize) %>">
+    <link rel="stylesheet" type="text/css" href="<%- theme.jsDelivr.url %><%- url_for(theme.libs.css.aos) %>">
+    <link rel="stylesheet" type="text/css" href="<%- theme.jsDelivr.url %><%- url_for(theme.libs.css.animate) %>">
+    <link rel="stylesheet" type="text/css" href="<%- theme.jsDelivr.url %><%- url_for(theme.libs.css.lightgallery) %>">
+    <link rel="stylesheet" type="text/css" href="<%- theme.jsDelivr.url %><%- url_for(theme.libs.css.matery) %>">
+    <link rel="stylesheet" type="text/css" href="<%- theme.jsDelivr.url %><%- url_for(theme.libs.css.my) %>">
 
-    <link rel="stylesheet" type="text/css" href="<%- theme.libs.css.fontAwesome %>">
-    <link rel="stylesheet" type="text/css" href="<%- theme.libs.css.materialize %>">
-    <link rel="stylesheet" type="text/css" href="<%- theme.libs.css.aos %>">
-    <link rel="stylesheet" type="text/css" href="<%- theme.libs.css.animate %>">
-    <link rel="stylesheet" type="text/css" href="<%- theme.libs.css.lightgallery %>">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
     <style type="text/css">
         <% if (!theme.code.break) { %>
         code[class*="language-"], pre[class*="language-"] {
@@ -99,5 +99,5 @@ if (faviconExt === 'png') {
 
         <% } %>
     </style>
-    <script src="<%- theme.libs.js.jquery %>"></script>
+    <script src="<%- theme.jsDelivr.url %><%- theme.libs.js.jquery %>"></script>
 </head>

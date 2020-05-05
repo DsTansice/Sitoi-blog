@@ -19,7 +19,7 @@
                     <div class="col s12 m12 l4">
                         <div class="profile center-align">
                             <div class="avatar">
-                                <img src="<%- theme.profile.avatar %>" alt="<%- config.author %>"
+                                <img src="<%- theme.jsDelivr.url %><%- url_for(theme.profile.avatar) %>" alt="<%- config.author %>"
                                      class="circle responsive-img avatar-img">
                             </div>
                             <div class="author">
@@ -42,9 +42,7 @@
                 </div>
 
                 <div class="introduction center-align" data-aos="fade-up"><%= theme.profile.introduction %></div>
-<!--                <div class="card-content" style="margin: 1.5rem auto 3rem;max-width: 1000px;">-->
-<!--                    <%- page.content %>-->
-<!--                </div>-->
+
                 <%- partial('_widget/post-charts') %>
 
                 <% if (theme.myProjects && theme.myProjects.enable) { %>

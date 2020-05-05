@@ -11,22 +11,22 @@
 <%- partial('_partial/search') %>
 <%- partial('_partial/back-top') %>
 
-<script src="<%- theme.libs.js.materialize %>"></script>
-<script src="<%- theme.libs.js.masonry %>"></script>
-<script src="<%- theme.libs.js.aos %>"></script>
-<script src="<%- theme.libs.js.scrollProgress %>"></script>
-<script src="<%- theme.libs.js.lightgallery %>"></script>
-<script src="<%- theme.libs.js.matery %>"></script>
+<script src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.materialize) %>"></script>
+<script src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.masonry) %>"></script>
+<script src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.aos) %>"></script>
+<script src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.scrollProgress) %>"></script>
+<script src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.lightgallery) %>"></script>
+<script src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.matery) %>"></script>
 
 <%- partial('_partial/google-analytics') %>
 <%- partial('_partial/baidu-analytics') %>
 <%- partial('_partial/baidu-push') %>
 <% if (theme.clicklove.enable) { %>
-    <script src="<%- theme.libs.js.clicklove %>" async="async"></script>
+    <script src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.clicklove) %>" async="async"></script>
 <% } %>
 
 <% if (theme.busuanziStatistics && theme.busuanziStatistics.enable) { %>
-    <script async src="<%- theme.libs.js.busuanzi %>"></script>
+    <script async src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.busuanzi) %>"></script>
 <% } %>
 
 <script type="text/javascript">
@@ -99,11 +99,11 @@
     <script type="text/javascript" color="<%- theme.canvas_nest.color %>"
             pointColor="<%- theme.canvas_nest.pointColor %>" opacity='<%- theme.canvas_nest.opacity %>'
             zIndex="<%- theme.canvas_nest.zIndex %>" count="<%- theme.canvas_nest.count %>"
-            src="<%- theme.libs.js.canvas_nest %>"></script>
+            src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.canvas_nest) %>"></script>
 <% } %>
 
 <% if (theme.instantpage.enable) { %>
-    <script src="<%- theme.libs.js.instantpage %>" type="module"></script>
+    <script src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.instantpage) %>" type="module"></script>
 <% } %>
 
 </body>

@@ -3,7 +3,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year"><%- theme.time.year %></span>
-            <a href="<%- config.url %>" target="_blank"><%- config.author %></a>
+            <a href="<%- url_for('/about') %>" rel="external nofollow noreferrer"><%- page.author || config.author %></a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
@@ -37,7 +37,7 @@
                             class="white-color"><%= totalcount(site) %></span>&nbsp;字
                 <% } %>
                 <% if (theme.icp.enable) { %>
-                    <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" alt="icp"/>
+                    <span id="icp"><img src="<%- theme.jsDelivr.url %><%- theme.icp.icon %>" style="vertical-align: text-bottom;" alt="icp"/>
                 <a href="<%- theme.icp.url %>" target="_blank"><%- theme.icp.text %></a>
             </span>
                 <% } %>

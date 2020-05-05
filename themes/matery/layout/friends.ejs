@@ -39,9 +39,7 @@
     }
 
     .frind-ship .title h1 {
-        /* line-height: auto; */
-        line-height: 0.8rem;
-        padding-bottom: 16px;
+        padding-bottom: 5px;
         border-bottom: 2px solid #fff;
         position: relative;
         top: -15px;
@@ -185,18 +183,9 @@
         background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
     }
 
-    /*.friend-introduction {*/
-    /*    min-height: 3rem;*/
-    /*}*/
-
     article .card {
         overflow: visible !important;
     }
-
-    /* .f-card {
-        overflow: visible !important;
-    }  */
-
 </style>
 
 <main class="content">
@@ -216,16 +205,16 @@
                                     <div class="card frind-card<%- ((i % 10) + 1) %>">
                                         <div class="frind-ship">
                                             <div class="title">
-                                                <img src="<%- friend.avatar %>" alt="img">
+                                                <img src="<%- url_for(friend.avatar) %>" alt="img">
                                                 <div>
-                                                    <h1 class="friend-name"><%- friend.name %></h1>
-                                                    <p style="position: relative;top: -35px;"><%- friend.introduction %></p>
+                                                    <h1 class="friend-name"><%= friend.name %></h1>
+                                                    <p style="position: relative;top: -35px;"><%= friend.introduction %></p>
                                                 </div>
                                             </div>
                                             <div class="friend-button">
-                                                <a href="<%- friend.url %>" target="_blank"
+                                                <a href="<%- url_for(friend.url) %>" target="_blank"
                                                    class="button button-glow button-rounded button-caution">
-                                                    <%- friend.title %>
+                                                    <%= friend.title %>
                                                 </a>
                                             </div>
                                         </div>
@@ -264,27 +253,30 @@
                 <%- partial('_partial/valine') %>
             <% } %>
 
+            <% if (theme.minivaline && theme.minivaline.enable) { %>
+                <%- partial('_partial/minivaline') %>
+            <% } %>
         </div>
     </div>
 </main>
 
 
 <!-- 代码块功能依赖 -->
-<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<script type="text/javascript" src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.codeBlockFuction) %>"></script>
 
 <!-- 代码语言 -->
 <% if (theme.code.lang) { %>
-    <script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+    <script type="text/javascript" src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.codeLang) %>"></script>
 <% } %>
 
 <!-- 代码块复制 -->
 <% if (theme.code.copy) { %>
-    <script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+    <script type="text/javascript" src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.codeCopy) %>"></script>
 <% } %>
 
 <!-- 代码块收缩 -->
 <% if (theme.code.shrink) { %>
-    <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+    <script type="text/javascript" src="<%- theme.jsDelivr.url %><%- url_for(theme.libs.js.codeShrink) %>"></script>
 <% } %>
 
 <!-- 代码块折行 -->

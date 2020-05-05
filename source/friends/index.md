@@ -13,17 +13,6 @@ layout: "friends"
 
 **友链格式①：**
 
-```text
-博客名字： Sitoi
-博客地址： https://sitoi.cn/
-博客头像： https://github.com/Sitoi.png
-博客简介： 爬虫工程师的进阶之旅
-```
-
-<br>
-
-**友链格式②：**
-
 ```json
 {
     "name": "Sitoi",
@@ -32,6 +21,17 @@ layout: "friends"
     "introduction": "爬虫工程师的进阶之旅",
     "title": "访问主页"
 }
+```
+
+<br>
+
+**友链格式②：**
+
+```text
+博客名字： Sitoi
+博客地址： https://sitoi.cn/
+博客头像： https://github.com/Sitoi.png
+博客简介： 爬虫工程师的进阶之旅
 ```
 
 > 注：如果需要交换友链，请在下面留言
