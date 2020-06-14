@@ -144,7 +144,7 @@ video:
   enable: true                                            # 是否开启视频
   showTitle: true                                         # 是否显示标题
   title: 治愈视频                                          # 标题内容
-  url: https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4 # 视频超链接
+  url: http://f.video.weibocdn.com/R0DXuJeDlx07CNl37Ji0010412005qGN0E010.mp4?label=mp4_ld&template=640x360.25.0&trans_finger=40a32e8439c5409a63ccf853562a60ef&Expires=1592135123&ssig=EFntofbqiQ&KID=unistore,video # 视频超链接
   pic:                                                    # 图片超链接
   thumbnails:
   height:                                                 # 高度
@@ -232,7 +232,7 @@ postInfo:
   update: true      # 更新日期
   wordCount: true   # 文章字数统计
   min2read: true    # 文章阅读时长
-  readCount: false  # 文章阅读次数
+  readCount: true  # 文章阅读次数
 
 # 是否激活文章 TOC 功能，并配置 TOC 支持选中哪些标题类型，这是全局配置。
 # 可以在某篇文章的 Front-matter 中再加上 `toc: false`，使该篇文章关闭 TOC 目录功能
@@ -653,12 +653,12 @@ libs:
     my: /css/my.css
     matery: /css/matery.css
   js:
-    typed: https://cdn.jsdelivr.net/npm/typed.js@2.0.11
+    typed: https://cdn.jsdelivr.net/npm/typed.js
     codeBlockFuction: /libs/codeBlock/codeBlockFuction.js
     codeCopy: /libs/codeBlock/codeCopy.js
     codeLang: /libs/codeBlock/codeLang.js
     codeShrink: /libs/codeBlock/codeShrink.js
-    jquery: /libs/jquery/jquery-3.4.1.min.js
+    jquery: /libs/jquery/jquery.min.js
     materialize: /libs/materialize/materialize.min.js # 1.0.0
     masonry: /libs/masonry/masonry.pkgd.min.js # v4.0.0
     aos: /libs/aos/aos.js
